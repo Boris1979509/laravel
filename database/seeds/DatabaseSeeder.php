@@ -9,8 +9,15 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
-        // $this->call(UserSeeder::class);
+        $this->call(UserTableSeeder::class);
+        $this->command->info('The user table was successfully loaded with data!');
+
+        $this->call(AuthorTableSeeder::class);
+        $this->command->info('The author table was successfully loaded with data!');
+
+        $this->call(BookTableSeeder::class);
+        $this->command->info('The book table was successfully loaded with data!');
     }
 }
