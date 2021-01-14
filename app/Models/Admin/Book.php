@@ -2,8 +2,10 @@
 
 namespace App\Models\Admin;
 
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Book
@@ -13,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Book extends Model
 {
+    use SoftDeletes, CrudTrait;
     /**
      * @var array $fillable
      */

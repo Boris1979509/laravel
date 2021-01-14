@@ -16,6 +16,9 @@ class AuthorBookTable extends Migration
         Schema::create('author_book', static function (Blueprint $table) {
             $table->integer('author_id');
             $table->integer('book_id');
+            $table->index(['author_id', 'book_id']);
+            $table->foreign('author_id')->references('id')->on('authors');
+            $table->foreign('book_id')->references('id')->on('books');
         });
     }
 

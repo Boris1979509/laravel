@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('name');
             $table->decimal('price', 10, 2, true)->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
